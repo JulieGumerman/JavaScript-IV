@@ -56,15 +56,15 @@ class Instructor extends Person {
 
         let scoreManipulation = student.grade + numberGenerator;
 
-        let cupcake = function(score) {
+        let graduate = function(score) {
             if (score>=70){
                 return " You are a Jedi master.";
             } else {
                 return " Strong are you with the force, but you are not a Jedi yet";
             }
-        } //end cupcake function
-        /*console.log(scoreManipulation)*/;
-        console.log(scoreManipulation + student.name + cupcake(scoreManipulation));
+        } //end graduate function
+      
+        console.log(scoreManipulation + student.name + graduate(scoreManipulation));
     }//end messWithGrades
 
 
@@ -209,3 +209,4 @@ rey.sprintChallenge("Jedi combat techniques");
 ben.graduate();
 rey.graduate();
 quiGon.messWithGrades(ben);
+yoda.messWithGrades(rey);
