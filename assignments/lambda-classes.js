@@ -49,6 +49,17 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}.`);
     }
+
+
+    messWithGrades(student) {
+        let numberGenerator = Math.floor(Math.random()*15);
+        let scoreManipulation = student.grade - numberGenerator;
+        console.log(scoreManipulation);
+    }
+
+    //operators---write a callback???
+    //generate a random number and add or subtract it
+
 }
 
 class ProjectManager extends Instructor {
@@ -189,3 +200,4 @@ ben.PRAssignment("dark side leadership techniques");
 rey.sprintChallenge("Jedi combat techniques");
 ben.graduate();
 rey.graduate();
+quiGon.messWithGrades(ben);
