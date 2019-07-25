@@ -52,13 +52,21 @@ class Instructor extends Person {
 
 
     messWithGrades(student) {
-        let numberGenerator = Math.floor(Math.random()*15);
-        let scoreManipulation = student.grade - numberGenerator;
-        console.log(scoreManipulation);
-    }
+        let numberGenerator = Math.floor(Math.random() * (25 - (-25)) -25);
 
-    //operators---write a callback???
-    //generate a random number and add or subtract it
+        let scoreManipulation = student.grade + numberGenerator;
+
+        let cupcake = function(score) {
+            if (score>=70){
+                return " You are a Jedi master.";
+            } else {
+                return " Strong are you with the force, but you are not a Jedi yet";
+            }
+        } //end cupcake function
+        /*console.log(scoreManipulation)*/;
+        console.log(scoreManipulation + student.name + cupcake(scoreManipulation));
+    }//end messWithGrades
+
 
 }
 
@@ -145,7 +153,7 @@ class Student extends Person {
 
     listsSubjects() {
         this.favSubjects.forEach((subject) => {
-            console.log(subject);
+            console.log(`This student likes ${subject}`);
         });
     }
 
