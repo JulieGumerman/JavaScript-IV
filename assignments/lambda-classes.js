@@ -128,22 +128,32 @@ class Student extends Person {
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
+        this.grade = attributes.grade;
+    
     }
 
-    listsSubjects(){
+    listsSubjects() {
         this.favSubjects.forEach((subject) => {
             console.log(subject);
         });
     }
 
     PRAssignment(subject){
-        console.log(`${this.name} has submitted a PR for ${subject}.`)
+        console.log(`${this.name} has submitted a PR for ${subject}.`);
 
     }
 
     sprintChallenge(subject){
-        console.log(`${this.name} has begun sprint challenge on ${subject}`)
+        console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
+    
+    graduate(){
+        if (this.grade>=70){
+            console.log("You are now a Jedi master");
+        } else {
+            console.log("Strong are you with the force, but you are not a Jedi yet");
+        }
+    } 
 }
 
 let rey = new Student ({
@@ -152,7 +162,8 @@ let rey = new Student ({
     location: "Millenium Falcon",
     previousBackground: "scrapper",
     className: "private tutor",
-    favSubjects: ["lightsabers", "Jedi philosophy", "piloting"]
+    favSubjects: ["lightsabers", "Jedi philosophy", "piloting"],
+    grade: 89,
 
 });
 
@@ -162,16 +173,19 @@ let ben = new Student ({
     location: "somewhere, sulking",
     previousBackground: "the son of Leia and Han",
     className: "Luke's Jedi Academy",
-    favSubjects: ["throwing tantrums", "flexing his superiority", "manipulation"]
+    favSubjects: ["throwing tantrums", "flexing his superiority", "manipulation"],
+    grade: 65
 })
 
 /*****Tests*****/
 rey.listsSubjects();
 ben.listsSubjects();
-console.log(ben.name, ben.previousBackground, ben.classname);
+console.log(ben.name, ben.previousBackground, ben.className);
 yoda.grade(rey, "lightsaber safety techniques");
 luke.debugsCode(ben, "Jedi combat tactics");
 luke.debugsCode(rey, "Jedi Philosophy 101");
 quiGon.grade(ben, "Jedi temper remediation");
 ben.PRAssignment("dark side leadership techniques");
 rey.sprintChallenge("Jedi combat techniques");
+ben.graduate();
+rey.graduate();
